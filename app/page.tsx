@@ -6,8 +6,8 @@ const Tree = dynamic(() => import("@/components/React3Fiber/Tree"), {
 
 export default function Home() {
     return (
-        <div className="relative h-full w-full">
-            <Tree />
+        <div className="relative h-full w-full bg-red-500">
+            {/* <Tree /> */}
         </div>
     );
 }

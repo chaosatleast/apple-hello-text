@@ -40,12 +40,12 @@ type Props = {
     icon: React.ReactNode;
 };
 
-const MotionTextWithIcon: React.FC<Props> = ({ children, icon }) => {
+const TextWithIcon: React.FC<Props> = ({ children, icon }) => {
     const [isHovered, setIsHovered] = React.useState(false);
 
     return (
         <motion.div
-            className="relative flex h-fit w-fit flex-row items-center text-foreground"
+            className="text-t-secondary relative flex h-fit w-fit flex-row items-center"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -78,4 +78,4 @@ const MotionTextWithIcon: React.FC<Props> = ({ children, icon }) => {
     );
 };
 
-export default MotionTextWithIcon;
+export default TextWithIcon;
