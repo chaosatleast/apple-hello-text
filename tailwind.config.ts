@@ -34,6 +34,13 @@ const config: Config = {
                 "b-accent-warning": "rgb(var(--b-accent-warning))",
                 "b-accent-blue-grey": "rgb(var(--b-accent-blue-grey))",
             },
+
+            fontFamily: {
+                zcoolKuaile: "var(--font-zcool-kuai-le)",
+                zcool: "var(--font-zcool-qingke-huangyou)",
+                maShanZheng: "var(--font-maShanZheng)",
+                antonio: "var(--font-antonio)",
+            },
         },
     },
     plugins: [],

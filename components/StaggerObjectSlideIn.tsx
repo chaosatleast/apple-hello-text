@@ -33,7 +33,7 @@ function StaggerObjectSlideIn({
                         animate(
                             info.target,
                             {
-                                y: [30, 0],
+                                y: ["100%", "0%"],
                                 opacity: [0, 1],
                             },
                             {
@@ -63,7 +63,7 @@ function StaggerObjectSlideIn({
         }
     }, [isInView]);
     return (
-        <motion.div className="object-slide-in" ref={scope}>
+        <motion.div className="object-slide-in overflow-hidden" ref={scope}>
             {children}
         </motion.div>
     );

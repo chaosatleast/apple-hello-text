@@ -57,7 +57,7 @@ const arrowVariants = {
     },
     hover: {
         rotate: -45,
-        right: "20px",
+        right: "15px",
         transition: {
             duration: 0.3,
             ease: "easeInOut",
@@ -70,7 +70,7 @@ function LetsTalkButton({ children }: { children: React.ReactNode }) {
 
     return (
         <motion.div
-            className="border-t-tertiary relative flex h-12 w-40 flex-row items-center overflow-hidden rounded-full border px-4 py-2 font-medium"
+            className="relative flex h-12 w-40 flex-row items-center overflow-hidden rounded-full border border-t-tertiary px-4 py-2 font-medium"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
@@ -83,7 +83,7 @@ function LetsTalkButton({ children }: { children: React.ReactNode }) {
                 {children}
             </motion.div>
             <motion.div
-                className="bg-t-tertiary absolute flex items-center justify-center rounded-full text-background"
+                className="absolute flex items-center justify-center rounded-full bg-t-tertiary text-background"
                 variants={arrowBgVariants}
                 initial="initial"
                 animate={hovered ? "hover" : "initial"}

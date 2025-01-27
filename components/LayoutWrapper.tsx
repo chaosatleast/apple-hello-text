@@ -4,6 +4,7 @@ import React, { createContext, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Image from "next/image";
+import Tree from "./React3Fiber/Tree";
 
 type Props = {
     children: React.ReactNode;
@@ -20,7 +21,7 @@ export const ThemeContext = createContext<{
 const imgDomain = process.env.NEXT_PUBLIC_IMAGE_DOMAIN;
 
 function LayoutWrapper({ children }: Props) {
-    const [theme, setTheme] = useState("dark" as "dark" | "light");
+    const [theme, setTheme] = useState("light" as "dark" | "light");
 
     const pathname = usePathname();
 
@@ -30,14 +31,14 @@ function LayoutWrapper({ children }: Props) {
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
-            <div
-                className={
-                    "touch-auto bg-background " +
-                    (theme === "dark" ? "dark" : "")
-                }
-            >
+            <div className={"touch-auto bg-background " + ""}>
                 <div className="">
                     {/* Header  */}
+                    <div className="fixed left-0 top-0 z-0 h-screen w-screen">
+                        <div className="hidden h-full w-full md:block">
+                            <Tree />
+                        </div>
+                    </div>
 
                     <div className="fixed top-0 z-50 w-full">
                         <Header
@@ -53,7 +54,7 @@ function LayoutWrapper({ children }: Props) {
                     <div className="flex flex-col">
                         {/* Body */}
 
-                        <div className="h-screen">{children}</div>
+                        <div className="">{children}</div>
                         <div className="relative">
                             <Footer />
                         </div>

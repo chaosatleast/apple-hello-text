@@ -25,11 +25,11 @@ function Header({ imageUrl }: Props) {
     const themeContext = useContext(ThemeContext);
     const router = useRouter();
     return (
-        <div className="flex h-20 w-full items-center justify-center bg-[rgba(var(--background),0.5)] backdrop-blur-lg">
-            <div className="absolute left-0 top-0 z-0 h-full w-full bg-blend-overlay">
-                {/* <GridHeader /> */}
+        <div className="flex h-20 w-full items-center justify-center backdrop-blur-sm">
+            {/* <div className="absolute left-0 top-0 z-0 h-full w-full bg-blend-overlay">
+                <GridHeader />
             </div>
-            {/* <div className="absolute left-0 top-0 z-[1] h-full w-full bg-gradient-to-t from-[rgb(var(--background))] to-transparent to-50%"></div> */}
+            <div className="absolute left-0 top-0 z-[1] h-full w-full bg-gradient-to-t from-[rgb(var(--background))] to-transparent to-50%"></div> */}
             <div className="relative z-10 flex h-full w-full items-center justify-between px-5">
                 <div className="flex flex-row items-center space-x-5">
                     <div
@@ -46,14 +46,14 @@ function Header({ imageUrl }: Props) {
                             />
                         )}
                     </div>
-                    <div className="text-t-primary hidden text-sm leading-snug md:block">
+                    <div className="hidden text-sm leading-snug text-t-primary md:block">
                         Learning is fun
                         <br /> while Painful –– FPS# 6
                     </div>
                 </div>
 
                 <div className="flex items-center justify-center gap-x-3 lg:space-x-8">
-                    <ModeButton
+                    {/* <ModeButton
                         onClick={() => {
                             themeContext.setTheme(
                                 themeContext.theme === "dark"
@@ -69,7 +69,7 @@ function Header({ imageUrl }: Props) {
                         ) : (
                             <AnimatedMoonIcon />
                         )}
-                    </ModeButton>
+                    </ModeButton> */}
 
                     <div className="hidden lg:block">
                         {" "}
