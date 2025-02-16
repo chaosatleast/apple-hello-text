@@ -4,7 +4,7 @@ import { useAnimate, useInView } from "motion/react";
 import React, { use, useState } from "react";
 import { motion } from "framer-motion";
 
-function TextRotateSlideUp({
+function SlideDownAnimation({
     children,
     isReverse = false,
 }: {
@@ -24,12 +24,11 @@ function TextRotateSlideUp({
             animate(
                 scope.current,
                 {
-                    y: ["100%", "0%"],
-                    opacity: [0, 1],
+                    y: ["-100%", "0%"],
                 },
                 {
                     duration: 0.3,
-                    ease: "easeOut",
+                    ease: "easeInOut",
                     delay: 1,
                 },
             ).then(() => {
@@ -40,12 +39,12 @@ function TextRotateSlideUp({
             animate(
                 scope.current,
                 {
-                    y: "100%",
-                    opacity: 0, // Reset to initial position
+                    y: "100%", // Reset to initial position
                 },
                 {
                     duration: 0.3,
                     ease: "easeIn",
+                    delay: 0,
                 },
             ).then(() => {
                 setOverflow("hidden");
@@ -54,13 +53,26 @@ function TextRotateSlideUp({
     }, [isInView]);
 
     return (
-        <motion.div
-            className={`h-full w-full overflow-${overflow}`}
-            ref={scope}
-        >
-            <>{children}</>
+        <motion.div className={`h-fit overflow-${overflow}`}>
+            <motion.div
+                className="h-full w-full"
+                ref={scope}
+                animate={
+                    {
+                        // rotate: isReverse ? -360 : 360,
+                        // transition: {
+                        //     delay: 0.5,
+                        //     repeat: Infinity,
+                        //     duration: 3,
+                        //     type: "spring",
+                        // },
+                    }
+                }
+            >
+                <div>{children}</div>
+            </motion.div>
         </motion.div>
     );
 }
 
-export default TextRotateSlideUp;
+export default SlideDownAnimation;

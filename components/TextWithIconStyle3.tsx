@@ -18,7 +18,7 @@ const arrowVariants = {
         rotate: -45,
         opacity: 1,
         x: -4,
-        color: "rgb(var(--n-primary))",
+        color: "rgb(var(--t-primary))",
         transition: {
             duration: 0.3,
             ease: "easeInOut",
@@ -35,7 +35,7 @@ const textVariants = {
         },
     },
     hover: {
-        color: "rgb(var(--n-primary))",
+        color: "rgb(var(--t-primary))",
         transition: {
             duration: 0.3,
             ease: "easeInOut",
@@ -54,7 +54,7 @@ function TextWithIconStyle3({
 
     return (
         <motion.div
-            className="text-t-secondary relative flex h-fit w-fit cursor-pointer flex-row items-center"
+            className="relative flex h-fit w-fit cursor-pointer flex-row items-center text-t-secondary"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >

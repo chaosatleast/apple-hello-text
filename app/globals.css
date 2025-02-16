@@ -119,4 +119,19 @@ body {
     .screen-width-footer {
         @apply mx-auto px-5;
     }
+
+    .thumb-visible::-webkit-slider-thumb {
+        @apply visible h-7 w-7 appearance-none rounded-full;
+        background: linear-gradient(
+            to top,
+            #f2f2f2,
+            #ffffff
+        ); /* 顶部亮，底部暗，制造鼓起的错觉 */
+        border: 1px solid #e0e0e0; /* 轻微边框，让边缘更清晰 */
+        box-shadow:
+            2px 2px 1px rgba(0, 0, 0, 0.35),
+            /* 右下角的暗部阴影 */ -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.8),
+            /* 左上角的高光，让它看起来更鼓 */ inset 0 0.5px 0.5px
+                rgba(255, 255, 255, 0.6); /* 轻微内高光，增加光滑感 */
+    }
 }

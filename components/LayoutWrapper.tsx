@@ -3,8 +3,6 @@ import { usePathname } from "next/navigation";
 import React, { createContext, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import Image from "next/image";
-import Tree from "./React3Fiber/Tree";
 
 type Props = {
     children: React.ReactNode;
@@ -31,14 +29,14 @@ function LayoutWrapper({ children }: Props) {
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
-            <div className={"touch-auto bg-background " + ""}>
+            <div
+                className={"scrollbar-invisible touch-auto bg-background " + ""}
+                style={{
+                    scrollbarWidth: "none",
+                }}
+            >
                 <div className="">
                     {/* Header  */}
-                    <div className="fixed left-0 top-0 z-0 h-screen w-screen">
-                        <div className="hidden h-full w-full md:block">
-                            <Tree />
-                        </div>
-                    </div>
 
                     <div className="fixed top-0 z-50 w-full">
                         <Header
@@ -55,7 +53,8 @@ function LayoutWrapper({ children }: Props) {
                         {/* Body */}
 
                         <div className="">{children}</div>
-                        <div className="relative">
+
+                        <div className=" ">
                             <Footer />
                         </div>
                     </div>

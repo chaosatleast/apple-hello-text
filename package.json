@@ -1,5 +1,5 @@
 {
-    "name": "happy-new-year-snake-2025",
+    "name": "apple-hello-text",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -17,7 +17,6 @@
         "lucide-react": "^0.468.0",
         "motion": "^11.15.0",
         "next": "14.2.20",
-        "p5": "^1.11.2",
         "react": "^18",
         "react-dom": "^18",
         "split-type": "^0.3.4",
